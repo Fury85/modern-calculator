@@ -205,7 +205,7 @@ document.addEventListener("keydown", (e) => {
     const key = e.key
     let handled = false
 
-    if (/[0-9]/.test(key)) {
+    if (/^[0-9]$/.test(key)) {
         handleInput(key)
         handled = true
     } else if (key === ".") {
