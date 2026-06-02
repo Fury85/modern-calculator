@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A modern glass-style calculator with keyboard support and calculation history. Built with HTML, CSS, and JavaScript.">
+    <title>Modern Calculator</title>
+    <link rel="stylesheet" href="css/variable.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="container">
+        <section class="box" aria-label="Calculator">
+            <div class="result">
+                <p id="expression" class="expression" aria-hidden="true"></p>
+                <output id="display" for="calculator-keys">0</output>
+            </div>
+
+            <div id="calculator-keys">
+                <div class="rows">
+                    <button type="button" class="clear-btn" data-value="C" aria-label="Clear calculator">C</button>
+                    <button type="button" class="operator-btn" data-value="/" aria-label="Divide">/</button>
+                    <button type="button" class="operator-btn" data-value="*" aria-label="Multiply">*</button>
+                    <button type="button" class="backspace-btn" data-value="backspace" aria-label="Delete last digit">⌫</button>
+                </div>
+
+                <div class="rows">
+                    <button type="button" data-value="7">7</button>
+                    <button type="button" data-value="8">8</button>
+                    <button type="button" data-value="9">9</button>
+                    <button type="button" class="operator-btn" data-value="-" aria-label="Subtract">-</button>
+                </div>
+
+                <div class="rows">
+                    <button type="button" data-value="4">4</button>
+                    <button type="button" data-value="5">5</button>
+                    <button type="button" data-value="6">6</button>
+                    <button type="button" class="operator-btn" data-value="+" aria-label="Add">+</button>
+                </div>
+
+                <div class="rows">
+                    <button type="button" data-value="1">1</button>
+                    <button type="button" data-value="2">2</button>
+                    <button type="button" data-value="3">3</button>
+                    <button type="button" data-value=".">.</button>
+                </div>
+
+                <div class="rows">
+                    <button type="button" class="end-btn" data-value="0">0</button>
+                    <button type="button" class="end-btn equal" data-value="=" aria-label="Calculate result">=</button>
+                </div>
+            </div>
+        </section>
+
+        <aside class="history" aria-label="Calculation history">
+            <div class="history-header">
+                <h2>History</h2>
+                <button type="button" id="clear-history" class="history-clear-btn" aria-label="Clear history">
+                    Clear
+                </button>
+            </div>
+            <ul id="history-list"></ul>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

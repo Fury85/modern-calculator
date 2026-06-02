@@ -1,0 +1,22 @@
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --display-bg: rgba(15, 23, 42, 0.9);
+    --text-light: #ffffff;
+    --text-dark: #0f172a;
+    --btn-default: #e2e8f0;
+    --btn-default-hover: #cbd5e1;
+    --operator: #6366f1;
+    --operator-hover: #4f46e5;
+    --equal: #06b6d4;
+    --equal-hover: #0891b2;
+    --clear: #ef4444;
+    --clear-hover: #dc2626;
+    --backspace: #14b8a6;
+    --backspace-hover: #0f766e;
+    --shadow-main: 0 20px 40px rgba(0, 0, 0, 0.35);
+    --shadow-btn: 0 8px 18px rgba(0, 0, 0, 0.2);
+    --radius-main: 22px;
+    --radius-btn: 14px;
+}

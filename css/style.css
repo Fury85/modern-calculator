@@ -1,0 +1,253 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: radial-gradient(circle at top left, var(--bg-secondary), var(--bg-primary) 60%);
+    color: var(--text-light);
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box {
+    width: min(360px, 95vw);
+    padding: 25px;
+    border-radius: var(--radius-main);
+    background: var(--glass-bg);
+    backdrop-filter: blur(18px);
+    box-shadow: var(--shadow-main);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.result {
+    min-height: 100px;
+    background: var(--display-bg);
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.expression {
+    width: 100%;
+    min-height: 1.25rem;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.55);
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#display {
+    width: 100%;
+    font-size: 42px;
+    font-weight: 500;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rows {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.rows button {
+    height: 65px;
+    width: 100%;
+    border: none;
+    border-radius: var(--radius-btn);
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--btn-default);
+    color: var(--text-dark);
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+}
+
+@media (hover: hover) {
+    .rows button:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-btn);
+        background: var(--btn-default-hover);
+    }
+
+    .rows button.operator-btn:hover {
+        background: var(--operator-hover);
+    }
+
+    .rows button.equal:hover {
+        background: var(--equal-hover);
+    }
+
+    .rows button.clear-btn:hover {
+        background: var(--clear-hover);
+    }
+
+    .rows button.backspace-btn:hover {
+        background: var(--backspace-hover);
+    }
+}
+
+.rows button:active {
+    transform: scale(0.94);
+}
+
+.rows button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+.rows button.operator-btn {
+    background: var(--operator);
+    color: white;
+}
+
+.rows button.equal {
+    background: var(--equal);
+    color: white;
+}
+
+.rows button.clear-btn {
+    background: var(--clear);
+    color: white;
+}
+
+.rows button.backspace-btn {
+    background: var(--backspace);
+    color: white;
+    font-size: 24px;
+}
+
+.end-btn {
+    grid-column: span 2;
+}
+
+.history {
+    width: min(280px, 95vw);
+    background: var(--glass-bg);
+    backdrop-filter: blur(18px);
+    padding: 18px;
+    border-radius: var(--radius-main);
+    box-shadow: var(--shadow-main);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.history h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.history-clear-btn {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-light);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.history-clear-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.history-clear-btn:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+#history-list {
+    list-style: none;
+    max-height: 460px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+#history-list li {
+    padding: 10px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+#history-list .history-empty {
+    color: rgba(255, 255, 255, 0.45);
+    font-style: italic;
+    border-bottom: none;
+    text-align: center;
+    padding: 24px 8px;
+}
+
+@media (max-width: 900px) {
+    .container {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .history {
+        width: min(360px, 95vw);
+    }
+}
+
+@media (max-width: 420px) {
+    .box {
+        padding: 20px;
+    }
+
+    .rows button {
+        font-size: 20px;
+        height: 60px;
+    }
+
+    #display {
+        font-size: 34px;
+    }
+
+    .expression {
+        font-size: 13px;
+    }
+
+    .history h2 {
+        font-size: 20px;
+    }
+}
