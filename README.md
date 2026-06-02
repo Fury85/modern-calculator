@@ -2,6 +2,7 @@
 
 A responsive calculator built with **HTML**, **CSS** and **vanilla JavaScript**. Glass-style UI, keyboard shortcuts, expression preview and a scrollable history panel.
 
+---
 
 ## 🚀 Features
 
@@ -12,6 +13,8 @@ A responsive calculator built with **HTML**, **CSS** and **vanilla JavaScript**.
 - Divide-by-zero handling
 - Mobile-friendly layout
 - No build step or dependencies
+
+---
 
 ## 🖇️ Demo
 
@@ -27,6 +30,8 @@ npx serve .
 
 Then visit `http://localhost:8080`.
 
+---
+
 ## ⌨️ Keyboard shortcuts
 
 | Key | Action |
@@ -37,6 +42,8 @@ Then visit `http://localhost:8080`.
 | `Enter` or `=` | Calculate |
 | `Backspace` / `Delete` | Remove last digit |
 | `C` or `Escape` | Clear all |
+
+---
 
 ## 📁 Project structure
 
@@ -49,6 +56,29 @@ Then visit `http://localhost:8080`.
 └── README.md
 ```
 
+---
+
 ## 🪪 License
 
 MIT — use freely for learning and portfolio projects.
+
+---
+
+## 🔗 Live Demo 
+[Check Live Demo here](https://modern-calculator-simple.netlify.app/)
+
+---
+
+## Screenshots
+**Initial**
+![Initial](screenshots/initial.png)
+
+**Calculations**
+![Calculations](screenshots/calculations.png)
+
+---
+
+## 🙎‍♂️ Author
+
+**Muhammad Farhan**
+
