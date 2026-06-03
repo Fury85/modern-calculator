@@ -82,3 +82,4 @@ MIT — use freely for learning and portfolio projects.
 
 **Muhammad Farhan**
 
+- Github: [Link](https://github.com/Fury85)
